@@ -24,10 +24,8 @@ body {
 }
 
 #start-button {
-  position: absolute;
+  position: center;
   left: 50%;
-  bottom: 10%;
-  transform: translateX(-50%);
   font-size: 16px;
   background-color: black;
   color: #fff;
@@ -36,8 +34,9 @@ body {
   box-shadow: 0;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: -25px;
-  z-index: 1; /* set a higher z-index to bring the button to the front */
+  top: -50px;
+  justify-content: center;
+  transform: translateY(-50px);
 }
 
 #game-board {
@@ -50,8 +49,6 @@ body {
   width: 100%; /* make the game board div take up the full width of its parent container */
   text-align: center; /* center the canvas horizontally */
 }
-
-
 
 #canvas {
   border: 1px solid black;

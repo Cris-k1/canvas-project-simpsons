@@ -16,6 +16,7 @@ class Game {
   update = () => {
     this.frames++;
     this.clear();
+    this.createBackground();
     this.homer.newPos();
     this.homer.draw();
     //this.updateEnemies();
