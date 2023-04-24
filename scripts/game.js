@@ -19,6 +19,7 @@ class Game {
     this.createBackground();
     this.homer.newPos();
     this.homer.draw();
+    this.homer.jump();
     //this.updateEnemies();
     //this.checkGameOver();
   };
