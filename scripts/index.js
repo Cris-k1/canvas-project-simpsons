@@ -4,7 +4,7 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 const player = new Homer(
-  canvas.width / 2 - 35,
+  (canvas.width / 2) - 35,
   canvas.height - 80,
   70,
   80,
