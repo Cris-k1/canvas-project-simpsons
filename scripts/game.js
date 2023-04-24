@@ -16,14 +16,19 @@ class Game{
     update = () =>{
         this.frames++;
         this.clear();
+        this.homer.jump()
         this.homer.newPos();
         this.homer.draw();
-        this.updateEnemies();
-        this.checkGameOver();
+        //this.updateEnemies();
+        //this.checkGameOver();
     }
 
     stop(){
         clearInterval(this.intervalId);
 
+    }
+
+    clear(){
+        this.ctx.clearRect(0,0,700,500)
     }
 }
