@@ -13,6 +13,7 @@ window.onload = () => {
     function startGame() {      
       const game = new Game(ctx, canvas.width, canvas.height, player);
       game.start();
+      game.createBackground();
     }
 
 }
