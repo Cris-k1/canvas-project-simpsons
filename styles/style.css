@@ -1,0 +1,59 @@
+body {
+  padding: 0;
+  text-align: center;
+  background-color: yellow;
+}
+
+.game-intro {
+  padding: 0% 10%;
+  margin-top: -20px;
+}
+
+.game-intro p {
+  font-size: 15px;
+  font-family: "Verdana";
+  text-align: center;
+}
+
+.logo-img {
+  width: 350;
+}
+
+.homer-img {
+  width: 150px;
+}
+
+#start-button {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: -25px;
+  z-index: 1; /* set a higher z-index to bring the button to the front */
+}
+
+#game-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* reduce the height of the game board */
+  position: relative;
+  top: -50px; /* move the game board and the button up */
+  width: 100%; /* make the game board div take up the full width of its parent container */
+  text-align: center; /* center the canvas horizontally */
+}
+
+
+
+#canvas {
+  border: 1px solid black;
+  margin: 0 auto; /* center the canvas horizontally */
+}
