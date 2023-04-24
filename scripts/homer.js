@@ -20,7 +20,7 @@ class Homer {
     });
     // Source Image
     imgHomer.src = "../images/Homer.png";
-    this.ctx.drawImage(imgHomer, this.x, this.y, 150, 150);
+    this.ctx.drawImage(imgHomer, this.x, this.y - 150, 160, 160);
   }
 
   newPos() {
@@ -31,14 +31,15 @@ class Homer {
   jump() {
     if (this.jumping === true) {
       if (this.jumpTop === true) {
-        this.speedY = 2;
-        this.speedX = 0;
+        this.speedY = 3;
+        
       } else {
         this.speedY = -2;
       }
 
-      if (this.y === 250) {
+      if (this.y <= 280 && this.jumpTop === false) {
         this.jumpTop = true;
+        this.speedY = 2;
       }
 
       if (this.y >= 420 && this.jumpTop === true) {
