@@ -32,7 +32,6 @@ class Homer {
     if (this.jumping === true) {
       if (this.jumpTop === true) {
         this.speedY = 3;
-        
       } else {
         this.speedY = -2;
       }
