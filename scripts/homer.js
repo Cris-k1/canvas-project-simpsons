@@ -15,12 +15,11 @@ class Homer {
 
   draw() {
     const imgHomer = new Image();
-    imgHomer.addEventListener("load", () => {
-      this.imgHomer = imgHomer;
-    });
+    this.imgHomer = imgHomer;
+
     // Source Image
     imgHomer.src = "../images/Homer.png";
-    this.ctx.drawImage(imgHomer, this.x, this.y - 150, 160, 160);
+    this.ctx.drawImage(imgHomer, this.x, this.y, this.w, this.h);
   }
 
   newPos() {
@@ -31,21 +30,43 @@ class Homer {
   jump() {
     if (this.jumping === true) {
       if (this.jumpTop === true) {
-        this.speedY = 3;
+        this.speedY = 2;
+        this.speedX = 0;
       } else {
         this.speedY = -2;
       }
 
-      if (this.y <= 280 && this.jumpTop === false) {
+      if (this.y === 250) {
         this.jumpTop = true;
-        this.speedY = 2;
       }
 
-      if (this.y >= 420 && this.jumpTop === true) {
+      if (this.y >= 320 && this.jumpTop === true) {
         this.jumpTop = false;
         this.speedY = 0;
         this.jumping = false;
       }
     }
+  }
+
+  top() {
+    return this.y;
+  }
+  bottom() {
+    return this.y + this.h;
+  }
+  left() {
+    return this.x;
+  }
+  right() {
+    return this.x + this.w;
+  }
+
+  crashWith(enemy) {
+    return (
+      this.top() < enemy.bottom() &&
+      this.right() > enemy.left() &&
+      this.left() < enemy.right() &&
+      this.bottom() > enemy.top()
+    );
   }
 }

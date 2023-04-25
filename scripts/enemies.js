@@ -10,7 +10,7 @@ class Enemies {
     this.speedY = 0;
   }
   draw() {
-    this.img.src = "../images/mrburns.png";
+    this.img.src = "../images/removed/mrburns-removebg-preview.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 
@@ -35,14 +35,7 @@ class Enemies {
     return this.x + this.w;
   }
 
-  crashWith(enemies) {
-    return (
-      this.bottom() > enemies.top() &&
-      this.top() < enemies.bottom() &&
-      this.right() > enemies.left() &&
-      this.left() < enemies.right()
-    );
-  }
+
 }
 
 class Enemies2 {
@@ -57,7 +50,7 @@ class Enemies2 {
     this.speedY = 0;
   }
   draw() {
-    this.img.src = "../images/toxicwaste.png";
+    this.img.src = "images/removed/toxicwaste-removebg-preview.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 
@@ -80,15 +73,6 @@ class Enemies2 {
 
   right() {
     return this.x + this.w;
-  }
-
-  crashWith(enemies2) {
-    return (
-      this.bottom() > enemies2.top() &&
-      this.top() < enemies2.bottom() &&
-      this.right() > enemies2.left() &&
-      this.left() < enemies2.right()
-    );
   }
 }
 
@@ -104,7 +88,7 @@ class Enemies3 {
     this.speedY = 0;
   }
   draw() {
-    this.img.src = "../images/bart.png";
+    this.img.src = "images/removed/bart-removebg-preview.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 
@@ -129,12 +113,4 @@ class Enemies3 {
     return this.x + this.w;
   }
 
-  crashWith(enemies3) {
-    return (
-      this.bottom() > enemies3.top() &&
-      this.top() < enemies3.bottom() &&
-      this.right() > enemies3.left() &&
-      this.left() < enemies3.right()
-    );
-  }
 }

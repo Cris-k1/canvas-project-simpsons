@@ -5,9 +5,9 @@ const ctx = canvas.getContext("2d");
 
 const player = new Homer(
   canvas.width / 2 - 35,
-  canvas.height - 80,
-  70,
-  -80,
+  canvas.height - 180,
+  160,
+  160,
   true,
   null,
   ctx

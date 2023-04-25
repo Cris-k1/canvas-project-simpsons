@@ -1,7 +1,82 @@
+class Bonus {
+  constructor(ctx) {
+    this.x = Math.floor(Math.random() * 420);
+    this.y = 0;
+    this.w = 60;
+    this.h = 120;
+    this.img = new Image();
+    this.ctx = ctx;
+    this.speedX = 0;
+    this.speedY = 0;
+  }
+  draw() {
+    this.img.src = "images/removed/duff-removebg-preview.png";
+    this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+  }
+  newPos() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+  }
 
-// need to upload the images 
+  top() {
+    return this.y;
+  }
 
-updateBonus(){
+  bottom() {
+    return this.y + this.h;
+  }
+
+  left() {
+    return this.x;
+  }
+
+  right() {
+    return this.x + this.w;
+  }
+}
+
+class BonusTwo {
+  constructor(ctx) {
+    this.x = Math.floor(Math.random() * 420);
+    this.y = 0;
+    this.w = 75;
+    this.h = 100;
+    this.img = new Image();
+    this.ctx = ctx;
+    this.speedX = 0;
+    this.speedY = 0;
+  }
+  draw() {
+    this.img.src =
+      "images/removed/407-4077547_the-simpsons-donut-png-transparent-simpsons-donut-png-removebg-preview.png";
+    this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+  }
+
+  newPos() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+  }
+
+  top() {
+    return this.y;
+  }
+
+  bottom() {
+    return this.y + this.h;
+  }
+
+  left() {
+    return this.x;
+  }
+
+  right() {
+    return this.x + this.w;
+  }
+}
+
+// need to upload the images
+
+/*updateBonus(){
    
     let originalY = 0;
     for (let i = 0; i<this.bonus.length; i++){
@@ -70,4 +145,4 @@ function collisionDetection(){
             }
         }
     }
-}
+}*/
