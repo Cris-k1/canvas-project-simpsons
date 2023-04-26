@@ -1,7 +1,7 @@
 class Enemies {
   constructor(ctx) {
     this.x = 700;
-    this.y = 300;
+    this.y = 375;
     this.w = 60;
     this.h = 120;
     this.img = new Image();
@@ -34,10 +34,8 @@ class Enemies {
   right() {
     return this.x + this.w;
   }
-
-
 }
-
+/*
 class Enemies2 {
   constructor(ctx) {
     this.x = 700;
@@ -112,5 +110,5 @@ class Enemies3 {
   right() {
     return this.x + this.w;
   }
-
 }
+*/

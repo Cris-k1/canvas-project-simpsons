@@ -30,13 +30,12 @@ class Homer {
   jump() {
     if (this.jumping === true) {
       if (this.jumpTop === true) {
-        this.speedY = 2;
-        this.speedX = 0;
+        this.speedY = 10;
       } else {
-        this.speedY = -2;
+        this.speedY = -10;
       }
 
-      if (this.y === 250) {
+      if (this.y === 120) {
         this.jumpTop = true;
       }
 
@@ -67,6 +66,15 @@ class Homer {
       this.right() > enemy.left() &&
       this.left() < enemy.right() &&
       this.bottom() > enemy.top()
+    );
+  }
+
+  crashWith(bonus) {
+    return (
+      this.top() < bonus.bottom() &&
+      this.right() > bonus.left() &&
+      this.left() < bonus.right() &&
+      this.bottom() > bonus.top()
     );
   }
 }
