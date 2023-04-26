@@ -12,6 +12,7 @@ class Game {
     this.bonus = [];
     this.bonus2 = [];
     this.score = 0;
+    this.lifes = 5;
   }
 
   start() {
@@ -30,6 +31,11 @@ class Game {
     this.drawScore();
     this.checkGameBonus();
     this.checkGameOver();
+    this.showLifes();
+    this.winOrLose();
+    if (this.lifes <= 0) {
+      this.stop();
+    }
   };
 
   stop() {
@@ -48,6 +54,12 @@ class Game {
 
   clear() {
     this.ctx.clearRect(0, 0, 700, 500);
+  }
+
+  showLifes() {
+    this.ctx.font = "22px Jazz LET, fantasy";
+    this.ctx.fillStyle = "black";
+    this.ctx.fillText(`Lifes: ${this.lifes}`, 580, 450);
   }
 
   updateEnemies() {
@@ -191,21 +203,21 @@ class Game {
     for (let i = 0; i < this.enemies.length; i++) {
       if (this.homer.crashWith(this.enemies[i])) {
         this.enemies.splice(i, 1);
-        /*  this.lifes -= 1; */
+        this.lifes -= 1;
         console.log("burns");
       }
     }
     for (let i = 0; i < this.enemies2.length; i++) {
       if (this.homer.crashWith(this.enemies2[i])) {
         this.enemies2.splice(i, 1);
-        /*  this.lifes -= 1; */
+        this.lifes -= 1;
         console.log("toxic");
       }
     }
     for (let i = 0; i < this.enemies3.length; i++) {
       if (this.homer.crashWith(this.enemies3[i])) {
         this.enemies3.splice(i, 1);
-        /*  this.lifes -= 1; */
+        this.lifes -= 1;
         console.log("bart");
       }
     }
@@ -222,7 +234,6 @@ class Game {
     for (let i = 0; i < this.bonus2.length; i++) {
       if (this.homer.crashWith(this.bonus2[i])) {
         this.bonus2.splice(i, 1);
-        /*  this.lifes -= 1; */
         this.score += 10;
         console.log("donut");
       }
@@ -239,14 +250,14 @@ class Game {
   }
 
   winOrLose() {
-    if (this.score === 1000) {
-      this.ctx.fillStyle = "white";
-      this.ctx.font = "30px Helvetica";
-      this.ctx.fillText(`YOU WIN! Score ${this.score}`, 80, 30);
-    } else if (this.score < 1000) {
-      this.ctx.fillStyle = "white";
-      this.ctx.font = "30px Helvetica";
-      this.ctx.fillText(`YOU LOSE! Score ${this.score}`, 80, 30);
+    if (this.score === 1000 && this.lifes > 0) {
+      this.ctx.fillStyle = "green";
+      this.ctx.font = "bold 30px Helvetica";
+      this.ctx.fillText(`YOU WIN! Score ${this.score}`, 200, 250);
+    } else if (this.score < 1000 && this.lifes === 0) {
+      this.ctx.fillStyle = "red";
+      this.ctx.font = "bold 30px Helvetica";
+      this.ctx.fillText(`YOU LOSE! Score ${this.score}`, 200, 250);
     }
   }
 }
