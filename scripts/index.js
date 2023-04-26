@@ -12,9 +12,12 @@ const player = new Homer(
   null,
   ctx
 );
+
+
 window.onload = () => {
   document.getElementById("start-button").onclick = () => {
     startGame();
+    
   };
 
   function startGame() {

@@ -203,7 +203,7 @@ class Game {
     for (let i = 0; i < this.enemies.length; i++) {
       if (this.homer.crashWith(this.enemies[i])) {
         this.enemies.splice(i, 1);
-        crash2.play()
+        crash2.play();
         this.lifes -= 1;
         console.log("burns");
       }
@@ -253,11 +253,11 @@ class Game {
   }
 
   winOrLose() {
-    if (this.score === 1000 && this.lifes > 0) {
+    if (this.score === 500 && this.lifes > 0) {
       this.ctx.fillStyle = "green";
       this.ctx.font = "bold 30px Helvetica";
       this.ctx.fillText(`YOU WIN! Score ${this.score}`, 200, 250);
-    } else if (this.score < 1000 && this.lifes === 0) {
+    } else if (this.score < 500 && this.lifes === 0) {
       this.ctx.fillStyle = "red";
       this.ctx.font = "bold 30px Helvetica";
       this.ctx.fillText(`YOU LOSE! Score ${this.score}`, 200, 250);

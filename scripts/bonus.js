@@ -2,8 +2,8 @@ class Bonus {
   constructor(ctx) {
     this.x = Math.floor(Math.random() * 420);
     this.y = 0;
-    this.w = 60;
-    this.h = 120;
+    this.w = 30;
+    this.h = 50;
     this.img = new Image();
     this.ctx = ctx;
     this.speedX = 0;
@@ -39,8 +39,8 @@ class BonusTwo {
   constructor(ctx) {
     this.x = Math.floor(Math.random() * 420);
     this.y = 0;
-    this.w = 75;
-    this.h = 100;
+    this.w = 60;
+    this.h = 60;
     this.img = new Image();
     this.ctx = ctx;
     this.speedX = 0;
