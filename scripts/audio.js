@@ -15,14 +15,8 @@ beerIsBeer.loop = false;
 let donutsIsGood = new Audio("../sounds/wohoy.mp3");
 donutsIsGood.loop = false;
 
+// intro
+let introMusic = new Audio("../sounds/simpsonstheme.mp3");
+introMusic.loop = false;
 
-
-
-/*
-crash1.play(); 
-crash2.play();  
-happyHomer.play();
-beerIsBeer.play();
-donutsIsGood.play();
-*/
-
+introMusic.play(); 

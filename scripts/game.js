@@ -13,10 +13,15 @@ class Game {
     this.bonus2 = [];
     this.score = 0;
     this.lifes = 5;
+     // intro
+    this.introMusic = new Audio("../sounds/simpsonstheme.mp3");
+    this.introMusic.loop = false;
+ 
   }
 
   start() {
     this.intervalId = setInterval(this.update, 10);
+    this.introMusic.play()
   }
 
   update = () => {
@@ -35,6 +40,8 @@ class Game {
     this.winOrLose();
     if (this.lifes <= 0) {
       this.stop();
+      this.introMusic.pause()
+      this.introMusic.currentTime = 0
     }
   };
 
