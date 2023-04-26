@@ -203,6 +203,7 @@ class Game {
     for (let i = 0; i < this.enemies.length; i++) {
       if (this.homer.crashWith(this.enemies[i])) {
         this.enemies.splice(i, 1);
+        crash2.play()
         this.lifes -= 1;
         console.log("burns");
       }
@@ -227,6 +228,7 @@ class Game {
     for (let i = 0; i < this.bonus.length; i++) {
       if (this.homer.crashWith(this.bonus[i])) {
         this.bonus.splice(i, 1);
+        happyHomer.play();
         this.score += 5;
         console.log("duff");
       }
@@ -234,6 +236,7 @@ class Game {
     for (let i = 0; i < this.bonus2.length; i++) {
       if (this.homer.crashWith(this.bonus2[i])) {
         this.bonus2.splice(i, 1);
+        donutsIsGood.play();
         this.score += 10;
         console.log("donut");
       }
