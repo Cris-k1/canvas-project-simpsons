@@ -1,9 +1,9 @@
 class Enemies {
   constructor(ctx) {
     this.x = 700;
-    this.y = 375;
-    this.w = 60;
-    this.h = 120;
+    this.y = 430;
+    this.w = 30;
+    this.h = 60;
     this.img = new Image();
     this.ctx = ctx;
     this.speedX = 0;

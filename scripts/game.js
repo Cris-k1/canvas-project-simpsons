@@ -54,7 +54,7 @@ class Game {
     //enemy mr.burns
     for (let i = 0; i < this.enemies.length; i++) {
       if (this.frames < 1500) {
-        this.enemies[i].x -= 2;
+        this.enemies[i].x -= 4;
         this.enemies[i].draw();
       } else if (this.frames >= 1500 && this.frames < 2500) {
         this.enemies[i].x -= 5;
@@ -181,7 +181,7 @@ class Game {
         this.bonus2[i].draw();
       }
     }
-    if (this.frames % 250 === 0) { 
+    if (this.frames % 250 === 0) {
       const donut = new BonusTwo(this.ctx);
       this.bonus2.push(donut);
     }
@@ -236,5 +236,17 @@ class Game {
     this.ctx.fillStyle = "white";
     this.ctx.font = "30px Helvetica";
     this.ctx.fillText(`Score ${this.score}`, 80, 30);
+  }
+
+  winOrLose() {
+    if (this.score === 1000) {
+      this.ctx.fillStyle = "white";
+      this.ctx.font = "30px Helvetica";
+      this.ctx.fillText(`YOU WIN! Score ${this.score}`, 80, 30);
+    } else if (this.score < 1000) {
+      this.ctx.fillStyle = "white";
+      this.ctx.font = "30px Helvetica";
+      this.ctx.fillText(`YOU LOSE! Score ${this.score}`, 80, 30);
+    }
   }
 }
