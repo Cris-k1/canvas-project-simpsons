@@ -10,7 +10,7 @@ class Bonus {
     this.speedY = 0;
   }
   draw() {
-    this.img.src = "images/removed/duff-removebg-preview.png";
+    this.img.src = "docs/assets/images/removed/duff-removebg-preview.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
   newPos() {
@@ -48,7 +48,7 @@ class BonusTwo {
   }
   draw() {
     this.img.src =
-      "images/removed/407-4077547_the-simpsons-donut-png-transparent-simpsons-donut-png-removebg-preview.png";
+      "docs/assets/images/removed/407-4077547_the-simpsons-donut-png-transparent-simpsons-donut-png-removebg-preview.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 

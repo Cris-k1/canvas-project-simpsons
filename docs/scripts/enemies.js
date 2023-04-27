@@ -10,7 +10,7 @@ class Enemies {
     this.speedY = 0;
   }
   draw() {
-    this.img.src = "../images/removed/mrburns-removebg-preview.png";
+    this.img.src = "docs/assets/images/removed/mrburns-removebg-preview.png";
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 

@@ -14,7 +14,7 @@ class Game {
     this.score = 0;
     this.lifes = 5;
     // intro
-    this.introMusic = new Audio("../sounds/simpsonstheme.mp3");
+    this.introMusic = new Audio("docs/assets/sounds/simpsonstheme.mp3");
     this.introMusic.loop = false;
   }
 
@@ -54,7 +54,7 @@ class Game {
       this.backgroundImg = backgroundImg;
     });
 
-    backgroundImg.src = "../images/background.png";
+    backgroundImg.src = "docs/assets/images/background.png";
     this.ctx.drawImage(backgroundImg, 0, 0, this.width, this.height);
   }
 

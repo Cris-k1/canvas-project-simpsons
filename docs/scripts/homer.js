@@ -18,7 +18,7 @@ class Homer {
     this.imgHomer = imgHomer;
 
     // Source Image
-    imgHomer.src = "../images/Homer.png";
+    imgHomer.src = "docs/assets/images/Homer.png";
     this.ctx.drawImage(imgHomer, this.x, this.y, this.w, this.h);
   }
 
