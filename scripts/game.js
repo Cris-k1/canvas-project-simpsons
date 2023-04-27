@@ -13,15 +13,14 @@ class Game {
     this.bonus2 = [];
     this.score = 0;
     this.lifes = 5;
-     // intro
+    // intro
     this.introMusic = new Audio("../sounds/simpsonstheme.mp3");
     this.introMusic.loop = false;
- 
   }
 
   start() {
     this.intervalId = setInterval(this.update, 10);
-    this.introMusic.play()
+    this.introMusic.play();
   }
 
   update = () => {
@@ -40,8 +39,8 @@ class Game {
     this.winOrLose();
     if (this.lifes <= 0) {
       this.stop();
-      this.introMusic.pause()
-      this.introMusic.currentTime = 0
+      this.introMusic.pause();
+      this.introMusic.currentTime = 0;
     }
   };
 
@@ -66,7 +65,7 @@ class Game {
   showLifes() {
     this.ctx.font = "22px Jazz LET, fantasy";
     this.ctx.fillStyle = "black";
-    this.ctx.fillText(`Lifes: ${this.lifes}`, 580, 450);
+    this.ctx.fillText(`LIFES: ${this.lifes}`, 580, 450);
   }
 
   updateEnemies() {
@@ -151,25 +150,25 @@ class Game {
   }
 
   updateBonus() {
-    // bonus donuts
+    // bonus beers
     for (let i = 0; i < this.bonus.length; i++) {
       if (this.frames < 1500) {
-        this.bonus[i].y += 0.1;
-        this.bonus[i].draw();
-      } else if (this.frames >= 1500 && this.frames < 2500) {
-        this.bonus[i].y += 0.2;
-        this.bonus[i].draw();
-      } else if (this.frames >= 2500 && this.frames < 3500) {
-        this.bonus[i].y += 0.3;
-        this.bonus[i].draw();
-      } else if (this.frames >= 3500 && this.frames < 4500) {
-        this.bonus[i].y += 0.4;
-        this.bonus[i].draw();
-      } else if (this.frames >= 4500 && this.frames < 6500) {
         this.bonus[i].y += 0.5;
         this.bonus[i].draw();
+      } else if (this.frames >= 1500 && this.frames < 2500) {
+        this.bonus[i].y += 1;
+        this.bonus[i].draw();
+      } else if (this.frames >= 2500 && this.frames < 3500) {
+        this.bonus[i].y += 2.5;
+        this.bonus[i].draw();
+      } else if (this.frames >= 3500 && this.frames < 4500) {
+        this.bonus[i].y += 3;
+        this.bonus[i].draw();
+      } else if (this.frames >= 4500 && this.frames < 6500) {
+        this.bonus[i].y += 3.5;
+        this.bonus[i].draw();
       } else if (this.frames >= 6) {
-        this.bonus[i].y += 0.6;
+        this.bonus[i].y += 4;
         this.bonus[i].draw();
       }
     }
@@ -256,15 +255,19 @@ class Game {
   drawScore() {
     this.ctx.fillStyle = "white";
     this.ctx.font = "30px Helvetica";
-    this.ctx.fillText(`Score ${this.score}`, 80, 30);
+    this.ctx.fillText(`SCORE ${this.score}`, 80, 30);
   }
 
   winOrLose() {
-    if (this.score === 500 && this.lifes > 0) {
+    if (this.score >= 500 && this.lifes > 0) {
+      this.ctx.fillStyle = "black";
+      this.ctx.fillRect(188, 210, 335, 60);
       this.ctx.fillStyle = "green";
       this.ctx.font = "bold 30px Helvetica";
       this.ctx.fillText(`YOU WIN! Score ${this.score}`, 200, 250);
     } else if (this.score < 500 && this.lifes === 0) {
+      this.ctx.fillStyle = "black";
+      this.ctx.fillRect(188, 210, 335, 60);
       this.ctx.fillStyle = "red";
       this.ctx.font = "bold 30px Helvetica";
       this.ctx.fillText(`YOU LOSE! Score ${this.score}`, 200, 250);

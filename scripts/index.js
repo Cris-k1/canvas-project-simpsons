@@ -33,7 +33,7 @@ document.addEventListener("keydown", (e) => {
   switch (e.code) {
     case "ArrowLeft":
       if (player.x > 0) {
-        player.speedX -= 1;
+        player.speedX -= 2;
       } else {
         player.x = 0;
       }
@@ -41,7 +41,7 @@ document.addEventListener("keydown", (e) => {
 
     case "ArrowRight":
       if (player.x + player.w < 700) {
-        player.speedX += 1;
+        player.speedX += 2;
       } else {
         player.x = 540;
       }

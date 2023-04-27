@@ -2,7 +2,7 @@ class Enemies {
   constructor(ctx) {
     this.x = 700;
     this.y = 430;
-    this.w = 35;
+    this.w = 30;
     this.h = 65;
     this.img = new Image();
     this.ctx = ctx;
