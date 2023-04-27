@@ -4,26 +4,27 @@ body {
   background-color: yellow;
 }
 
-.game-intro {
-  padding: 0% 10%;
-  margin-top: -20px;
-  display: flex; /* Add this line to make the container a flexbox */
-  justify-content: left; /* Align the container to the left */
-  align-items: center; /* Vertically center the content */
+.game-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.game-intro p {
-  font-size: 15px;
-  font-family: "Verdana";
-  text-align: left; /* Update text-align to left */
-  flex: content;
-  justify-content: left; /* Remove this line as it is not needed */
+.game-intro {
+  margin-right: 20px;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: bold 20px;
 }
 
 .logo-img {
-  width: 350;
-  display: flex;
-  justify-content: left;
+  width: 250px;
 }
 
 .homer-img {
@@ -31,8 +32,6 @@ body {
 }
 
 #start-button {
-  position: center;
-  left: 50%;
   font-size: 16px;
   background-color: black;
   color: #fff;
@@ -41,23 +40,19 @@ body {
   box-shadow: 0;
   border-radius: 5px;
   cursor: pointer;
-  top: -50px;
-  justify-content: center;
-  transform: translateY(-50px);
+  margin-top: 20px;
 }
 
 #game-board {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh; /* reduce the height of the game board */
   position: relative;
-  top: -50px; /* move the game board and the button up */
-  width: 100%; /* make the game board div take up the full width of its parent container */
-  text-align: center; /* center the canvas horizontally */
 }
 
-#canvas {
-  border: 1px solid black;
-  margin: 0 auto; /* center the canvas horizontally */
+#start-image {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
+
+/* #canvas {
+  border: 1px solid black; 
+} */

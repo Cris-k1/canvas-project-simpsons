@@ -8,19 +8,23 @@
     <title>The Simpsons</title>
   </head>
   <body>
-    <div class="game-intro">
-      <img src="./images/logo-img.png" alt="" class="logo-img" />
-      <br />
+    <div class="game-container">
+      <div class="game-intro">
+        <img src="./images/logo-img.png" alt="" class="logo-img" />
+      </div>
       <div id="game-board">
         <canvas id="canvas" width="700" height="500"></canvas>
+        <img id="start-image" src="./images/background1.jpg" width="700" height="500">
       </div>
-      <button id="start-button">Start Game</button>
-      <p>
-        Help Homer Simpson collect as many bonuses as possible while avoiding
-        Mr.Burns. Use the arrow keys to move Homer around the screen. Reach a
-        score of 500 and WIN!
-      </p>
-      <img src="./images/Homer.png" alt="" class="homer-img" />
+      <div class="game-info">
+        <p>
+          Help Homer Simpson collect as many bonuses as possible while avoiding
+          Mr.Burns. Use the arrow keys to move Homer around the screen. Reach a
+          score of 500 and WIN!
+        </p>
+        <img src="./images/Homer.png" alt="" class="homer-img" />
+        <button id="start-button">Start Game</button>
+      </div>
     </div>
 
     <script src="./scripts/audio.js"></script>

@@ -13,11 +13,13 @@ const player = new Homer(
   ctx
 );
 
-
 window.onload = () => {
-  document.getElementById("start-button").onclick = () => {
+  const startButton = document.getElementById("start-button");
+    const startImage = document.getElementById("start-image");
+    startButton.onclick = () => {
     startGame();
-    
+    startImage.remove();
+  }
   };
 
   function startGame() {
@@ -25,7 +27,7 @@ window.onload = () => {
     game.createBackground();
     game.start();
   }
-};
+;
 
 document.addEventListener("keydown", (e) => {
   switch (e.code) {
