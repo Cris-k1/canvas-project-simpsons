@@ -23,6 +23,10 @@ body {
   margin-left: bold 20px;
 }
 
+.game-info p {
+  font-size: bold 17px;
+}
+
 .logo-img {
   width: 250px;
 }
